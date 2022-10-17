@@ -51,3 +51,11 @@
 .searchInput {
     position: relative;
 }
+
+.removeSearchInput {
+    cursor: pointer;
+    font-size: 22px;
+    position: absolute;
+    right: 5%;
+    top: 28%;
+}

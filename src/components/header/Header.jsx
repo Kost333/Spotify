@@ -19,11 +19,13 @@ const Header = (props) => {
             <div className={style.searchInput}>
                 <input type="search" className={style.search} placeholder="What do you want to listen to?"
                        value={props.searchValue} onChange={(e) => props.setSearchValue(e.target.value)}/>
-                <i className="fa fa-times" style={{fontSize: "22px", position: "absolute", right: "3%", top: "23%"}}
-                   onClick={() => {
-                       props.setSearchValue('')
-                       navigate('/')
-                   }}></i>
+                {props.searchValue && <span className={style.removeSearchInput}>
+                    <i className="fa fa-times"
+                       onClick={() => {
+                           props.setSearchValue('')
+                           navigate('/')
+                       }}></i>
+                </span>}
             </div>
         </header>
     )

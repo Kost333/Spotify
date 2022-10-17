@@ -1,22 +1,46 @@
-import React, {useEffect} from 'react';
-import {Api} from "../../../api/api";
+import React from 'react';
+import {AudioPlayer, AudioPlayerControlSprite} from "react-audio-player-pro";
 
-const ArtistTracks = ({id}) => {
-    const getArtistTracks = () => {
-        Api.getAlbumTracks(id).then(d => {
-            console.log(d)
-        })
+const ExampleAudioPlayer = ({track}) => {
+
+    const audioTrackList = {
+        TrackType: [
+            {
+                src: track.preview_url,
+
+                preload: 'auto',
+
+                duration: 100,
+
+                mediaMetadata: {track},
+            },
+        ]
     };
 
-    useEffect(() => {
-        console.log(getArtistTracks)
-    }, [])
-
     return (
-        <div>
-            {id}
-        </div>
-    );
-};
+        <>
+            <AudioPlayerControlSprite/>
+            <AudioPlayer
+                trackList={audioTrackList}
 
-export default ArtistTracks;
+                className="my-class-name"
+
+                onDidMount={console.log}
+
+                defaultState={{
+                    isMuted: false,
+
+                    activeIndex: 0,
+
+                    isShuffleOn: false,
+
+                    isTrackListOpen: true,
+
+                    repeatingState: 'none',
+                }}
+            />
+        </>
+    );
+}
+
+export default ExampleAudioPlayer;
