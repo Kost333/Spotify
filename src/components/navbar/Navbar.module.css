@@ -1,0 +1,26 @@
+.nav {
+    grid-area: n;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 10px 10px 10px;
+}
+
+.navListItem {
+    margin-bottom: 8px;
+}
+
+.navItemBlock {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px;
+}
+
+.navItemBlock:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.nav .navListItem:last-child {
+    margin-bottom: 0;
+}

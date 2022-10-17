@@ -1,0 +1,28 @@
+.content {
+    grid-area: c;
+    background-color: #333;
+    border-radius: 10px;
+    margin: 0 10px 10px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.header {
+    height: 370px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.trackItemBlock {
+    padding: 8px 12px;
+    margin-bottom: 20px;
+}

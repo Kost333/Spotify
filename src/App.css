@@ -1,0 +1,27 @@
+.app-wrapper {
+    margin: 0 auto;
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+         "h h"
+         "n c";
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
+    color: #a6a6a6;
+    font-weight: bolder;
+    background-color: black;
+    font-family: "Segoe UI", serif;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+a {
+    color: inherit;
+}
+
+.p-10 {
+    padding: 10px;
+}
