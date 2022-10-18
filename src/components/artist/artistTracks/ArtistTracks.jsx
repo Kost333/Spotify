@@ -1,45 +1,38 @@
 import React from 'react';
 import {AudioPlayer, AudioPlayerControlSprite} from "react-audio-player-pro";
 
-const ExampleAudioPlayer = ({track}) => {
+const ExampleAudioPlayer = ({albumTracks}) => {
 
-    const audioTrackList = {
-        TrackType: [
-            {
+    const audioTrackList = [];
+    albumTracks.forEach(track => {
+        audioTrackList.push({
                 src: track.preview_url,
-
                 preload: 'auto',
-
-                duration: 100,
-
-                mediaMetadata: {track},
-            },
-        ]
-    };
+                duration: track.duration_ms,
+                content: <p>{track.name}</p>,
+                mediaMetadata: {
+                    title: track.name,
+                    artist: track?.artists[0]?.name,
+                },
+            }
+        )
+    })
 
     return (
-        <>
+        <div>
             <AudioPlayerControlSprite/>
             <AudioPlayer
                 trackList={audioTrackList}
-
-                className="my-class-name"
-
-                onDidMount={console.log}
-
+                className="audio__player"
                 defaultState={{
                     isMuted: false,
-
                     activeIndex: 0,
-
                     isShuffleOn: false,
-
                     isTrackListOpen: true,
-
                     repeatingState: 'none',
                 }}
             />
-        </>
+        </div>
     );
 }
 

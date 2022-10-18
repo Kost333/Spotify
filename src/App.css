@@ -1,3 +1,5 @@
+@import 'react-audio-player-pro/dist/style.css';
+
 .app-wrapper {
     margin: 0 auto;
     display: grid;
@@ -12,7 +14,9 @@
     font-weight: bolder;
     background-color: black;
     font-family: "Segoe UI", serif;
+    min-height: 100vh;
 }
+
 
 .mr-5 {
     margin-right: 5px;
@@ -24,4 +28,30 @@ a {
 
 .p-10 {
     padding: 10px;
+}
+
+.b48888 {
+    background: #121212 !important;
+    color: #fff;
+}
+
+.b48888:hover {
+    background: black;
+}
+
+.d6f4a6 {
+    border-bottom: none;
+    border-top: none;
+}
+
+.fa9e1a {
+    background-color: #121212;
+}
+
+.e0b58b {
+    background-color: #121212;
+}
+
+.df7adc {
+    color: white;
 }

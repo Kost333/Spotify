@@ -18,33 +18,17 @@ const AlbumData = (props) => {
     }, []);
 
     return (
-        <div>
+        <div className={style.trackItemBlock}>
             <div>
-                <img src={props?.AlbumData?.images?.[0]?.url} alt="Author" width="300px" style={{borderRadius: "10px"}}/>
+                <div>
+                    <img src={props?.AlbumData?.images?.[0]?.url} alt="Author" width="300px"
+                         style={{borderRadius: "10px"}}/>
+                </div>
             </div>
-
-            {albumId && (
-                <table className="table">
-                    <thead className="thead-dark">
-                    <tr>
-                        <th scope="col" style={{fontSize: "36px"}}>
-                            Tracks
-                        </th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <tr>
-                        {albumTracks.map((track) => (
-                            <div key={track.id} className={style.trackItemBlock}>
-                                <ArtistAudio track={track}/>
-                                <h5>{track.name}</h5>
-                            </div>
-                        ))}
-                    </tr>
-                    </tbody>
-                </table>
-            )}
+            <div>
+                <h2 style={{fontSize: "30px", padding: "20px"}}>Tracks</h2>
+                <ArtistAudio albumTracks={albumTracks}/>
+            </div>
         </div>
     );
 };

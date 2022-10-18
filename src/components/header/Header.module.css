@@ -13,6 +13,7 @@
     border-radius: 10px;
     filter: invert(100%);
     padding-left: 30px;
+    cursor: pointer;
 }
 
 .search {
@@ -57,5 +58,5 @@
     font-size: 22px;
     position: absolute;
     right: 5%;
-    top: 28%;
+    top: 24%;
 }

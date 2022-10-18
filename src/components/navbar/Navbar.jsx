@@ -1,15 +1,16 @@
 import React from 'react';
 import style from "./Navbar.module.css";
 import {NavLink} from "react-router-dom";
+import {logDOM} from "@testing-library/react";
 
 const navigation = [
     {
-        path: '/',
+        path: 'home',
         iconName: 'home',
         name: 'Home'
     },
     {
-        path: 'search',
+        path: '/',
         iconName: 'search',
         name: 'Search'
     },
