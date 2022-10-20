@@ -4,15 +4,15 @@ import {Api} from "../../../api/api";
 import {useParams} from "react-router-dom";
 import AlbumCard from "../../album/albumCard/AlbumCard";
 
-const ArtistData = () => {
+const ArtistData = (props) => {
     const {artistId} = useParams();
-
     const [albumsData, setAlbumsData] = useState([]);
 
     useEffect(() => {
         if (artistId) {
             Api.getArtistsAlbums(artistId).then(({data: albumsData}) => {
                 setAlbumsData(albumsData.items);
+                props.setAlbumName(albumsData.items)
             });
         }
     }, []);

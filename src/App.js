@@ -12,6 +12,7 @@ import AlbumData from "./components/album/albumData/AlbumData";
 const App = () => {
     const [searchValue, setSearchValue] = useState("");
     const [artistsData, setArtistsData] = useState([]);
+    const [albumName, setAlbumName] = useState([]);
     const [user, setUser] = useState();
 
     useEffect(() => {
@@ -45,24 +46,14 @@ const App = () => {
                     />
 
                     <Route
-                        path="artist-data"
-                        element={<ArtistData artistData={user}/>}
-                    >
-                        <Route
-                            path=":artistId"
-                            element={<ArtistData artistData={user}/>}
-                        />
-                    </Route>
+                        path="artist-data/:artistId"
+                        element={<ArtistData setAlbumName={setAlbumName}/>}
+                    />
 
                     <Route
-                        path="album-data"
-                        element={<AlbumData AlbumData={user}/>}
-                    >
-                        <Route
-                            path=":albumId"
-                            element={<AlbumData AlbumData={user}/>}
-                        />
-                    </Route>
+                        path="album-data/:albumId"
+                        element={<AlbumData AlbumData={user} albumName={albumName}/>}
+                    />
                 </Routes>
             </div>
         </BrowserRouter>

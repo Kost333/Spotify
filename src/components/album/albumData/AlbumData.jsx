@@ -19,10 +19,16 @@ const AlbumData = (props) => {
 
     return (
         <div className={style.trackItemBlock}>
-            <div>
+            <div style={{display: 'flex', gap: '20px'}}>
                 <div>
                     <img src={props?.AlbumData?.images?.[0]?.url} alt="Author" width="300px"
                          style={{borderRadius: "10px"}}/>
+                </div>
+                <div>
+                    {props.albumName.length ?
+                        <p style={{fontSize: "50px", padding: "20px"}}>{props.albumName[0].name}</p> : ''}
+                    {props.albumName.length ?
+                        <p style={{fontSize: "20px", padding: "20px"}}>{albumTracks[0]?.artists[0]?.name}</p> : ''}
                 </div>
             </div>
             <div>
